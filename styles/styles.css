@@ -1,13 +1,5 @@
- /* General Page Styles */
+/* General Page Styles */
  body {
-    background-color: black;
-    color: white;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-body {
     background-color: black !important;
     color: white;
     font-family: 'Arial', sans-serif;
@@ -132,9 +124,9 @@ footer p {
 
 /* Game Images */
 .product-card img {
-    width: 100%; /* Ensures equal size */
-    height: 200px; /* Fixed height */
-    object-fit: cover; /* Keeps images proportional */
+    width: 100%;
+        height: 200px;
+        object-fit: cover;
     border-radius: 5px;
     transition: opacity 0.3s ease-in-out;
 }
@@ -199,11 +191,11 @@ footer p {
     text-align: center;
     padding: 10px;
     font-size: 16px;
-    width: 100%; /* Ensures both buttons are the same width */
+    width: 100%;
     border-radius: 5px;
     font-weight: bold;
     transition: 0.3s ease-in-out;
-    box-sizing: border-box; /* Prevents sizing issues */
+    box-sizing: border-box;
     margin-top: 10px;
 }
 
@@ -215,8 +207,8 @@ footer p {
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centers text */
-    height: 40px; /* Ensures the same height as "Add to Cart" */
+    justify-content: center;
+        height: 40px;
 }
 
 .product-card .view-game-btn:hover {
@@ -231,7 +223,7 @@ footer p {
     color: black;
     border: none;
     cursor: pointer;
-    height: 40px; /* Matches "View Game" button height */
+    height: 40px;
 }
 
 .product-card button:hover {
@@ -283,19 +275,19 @@ input:focus {
 }
 /* Game Images - Adjusted Size */
 .product-card img {
-    width: 100%; /* Ensures images fit inside their container */
-    max-width: 250px; /* Limits image size to prevent them from becoming too large */
-    height: auto; /* Keeps aspect ratio */
+    width: 100%;
+        max-width: 250px;
+        height: auto;
     object-fit: cover;
     border-radius: 5px;
     transition: opacity 0.3s ease-in-out;
     display: block;
-    margin: 0 auto; /* Centers images inside the card */
+    margin: 0 auto;
 }
 /* Shopping Cart Section */
 #cart-section {
-    background-color: #222; /* Dark gray background */
-    color: white; /* White text */
+    background-color: #222;
+        color: white;
     padding: 20px;
     border-radius: 10px;
     max-width: 800px;
@@ -307,7 +299,7 @@ input:focus {
 #cart-items {
     list-style: none;
     padding: 0;
-    background-color: #333; /* Slightly lighter background */
+    background-color: #333;
     border-radius: 8px;
     padding: 10px;
     margin-top: 10px;
@@ -315,7 +307,7 @@ input:focus {
 
 /* Cart Items */
 #cart-items li {
-    background-color: #444; /* Darker background for items */
+    background-color: #444;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
@@ -326,12 +318,12 @@ input:focus {
 #total-price {
     font-size: 20px;
     font-weight: bold;
-    color: #f39c12; /* Highlight total price */
+    color: #f39c12;
 }
 
 /* Cart Buttons */
 #clear-cart-btn, #checkout-btn {
-    background-color: #f39c12; /* Orange button */
+    background-color: #f39c12;
     color: black;
     padding: 12px;
     font-size: 16px;
@@ -575,26 +567,27 @@ form button:hover {
 }
 /* View Game Page - Adjust Image Size (Only for view_game.html) */
 #view-game-container .game-image {
-    width: 100%; /* Ensures images fit inside their container */
-    max-width: 300px; /* Limits image size to prevent them from being too large */
-    height: auto; /* Keeps aspect ratio */
+    width: 100%;
+        max-width: 300px;
+        height: auto;
     object-fit: cover;
     border-radius: 5px;
     transition: opacity 0.3s ease-in-out;
     display: block;
-    margin: 0 auto; /* Centers images inside the container */
+    margin: 0 auto;
 }
 /* View Game Page - Adjust Image Size */
 #game-details img {
-    width: 100%; /* Ensures the image is responsive */
-    max-width: 300px; /* Limits the maximum width */
-    height: auto; /* Keeps aspect ratio */
+    width: 100%;
+        max-width: 300px;
+        height: auto;
     object-fit: cover;
     border-radius: 5px;
     transition: opacity 0.3s ease-in-out;
     display: block;
-    margin: 0 auto; /* Centers the image */
-}
+    margin: 0 auto;
+    }
+        /* 
 /* Footer Styling */
 footer {
     text-align: center;
