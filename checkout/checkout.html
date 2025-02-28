@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <script defer src="../js/checkout.js"></script>
+</head>
+<body>
+    <header>
+        <a href="../index.html"> <!-- ✅ Wrapped in an anchor tag -->
+            <img src="../images/GameHub_Logo.png" alt="GameHub Logo">
+        </a>
+        <h1>💳 Checkout</h1>
+        <a href="../cart.html" class="back-to-cart">🔙 Back to Cart</a> <!-- ✅ Corrected path -->
+    </header>
+    
+    <main>
+        <section id="checkout-section">
+            <h2>🛒 Order Summary</h2>
+            <ul id="order-items"></ul>
+            <p class="order-total"><strong>Total: $<span id="order-total">0.00</span></strong></p>
+
+            <h2>📦 Shipping Details</h2>
+            <form id="checkout-form">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            
+                <label for="address">Shipping Address:</label>
+                <input type="text" id="address" required>
+            
+                <button type="submit" class="checkout-btn">✅ Complete Purchase</button>
+            </form>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 GameHub. All rights reserved.</p> 
+        <p>📧 Email: support@gamehub.com | 📞 Phone: +123 456 789</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/youtube.png" alt="YouTube">
+            </a>
+        </div>
+    </footer> 
+       
+</body>
+</html>
