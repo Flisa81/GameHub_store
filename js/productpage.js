@@ -11,7 +11,7 @@ async function fetchProduct() {
 
     try {
         const baseAPIUrl = "https://v2.api.noroff.dev/gamehub";
-        const response = await fetch(`${baseAPIUrl}/${productId}`); // ✅ Fixed Template Literal Syntax
+        const response = await fetch(`${baseAPIUrl}/${productId}`); // 
         const data = await response.json();
 
         if (!response.ok) throw new Error("Product not found");
@@ -39,7 +39,7 @@ function displayProduct(product) {
                 <button onclick="addToCart('${product.id}', '${product.title}', ${product.discountedPrice})">Add to Cart</button>
             </div>
         </div>
-    `; // ✅ Fixed Template Literal Syntax
+    `;
 }
 
 // Run on page load

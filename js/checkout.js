@@ -62,7 +62,7 @@ function handleCheckout(event) {
     // Clear cart and redirect to confirmation page
     localStorage.removeItem("cart");
     alert("Payment Successful! Thank you for your order.");
-    window.location.href = "../confirmation/index.html"; // ✅ Correct path
+    window.location.href = "../confirmation/index.html"; 
 
 }
 function addToCart(id, title, price, imageUrl) {

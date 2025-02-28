@@ -2,9 +2,8 @@ function getCart() {
     return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
-// Display the cart items and total price
 function displayCart() {
-    let cart = getCart();
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
     const cartContainer = document.getElementById("cart-items");
     const totalPriceContainer = document.getElementById("total-price");
 
@@ -17,25 +16,23 @@ function displayCart() {
     }
 
     let totalPrice = 0;
-    cartContainer.innerHTML = cart.map((item, index) => {
+    cartContainer.innerHTML = cart.map(item => {
         totalPrice += item.price;
         return `
         <li class="cart-item">
-            <img src="${item.imageUrl}" alt="${item.title}" class="cart-item-image"> 
+            <img src="${item.imageUrl}" alt="${item.title}" class="cart-item-image">
             <div class="cart-item-info">
                 <p>${item.title} - $${item.price.toFixed(2)}</p>
-                <button class="remove-btn" data-index="${index}">❌ Remove</button>
+                <button class="remove-btn" data-id="${item.id}">❌ Remove</button>
             </div>
         </li>`;
     }).join("");
 
     totalPriceContainer.textContent = totalPrice.toFixed(2);
-    updateCartCount();
 
-    // Attach event listeners to remove buttons
     document.querySelectorAll(".remove-btn").forEach(button => {
         button.addEventListener("click", (event) => {
-            removeFromCart(event.target.dataset.index);
+            removeFromCart(event.target.dataset.id);
         });
     });
 }
@@ -61,7 +58,7 @@ function proceedToCheckout() {
         alert("Your cart is empty. Add items before proceeding.");
         return;
     }
-    window.location.href = "checkout/checkout.html"; // ✅ Corrected path
+    window.location.href = "checkout/checkout.html";
 }
 
 // Update cart count in the header
@@ -75,8 +72,8 @@ function updateCartCount() {
 
 // Run on page load
 document.addEventListener("DOMContentLoaded", () => {
-    displayCart(); // ✅ Displays cart items
-    updateCartCount(); // ✅ Updates cart count
+    displayCart();
+    updateCartCount(); 
     document.getElementById("clear-cart-btn")?.addEventListener("click", clearCart);
     document.getElementById("checkout-btn")?.addEventListener("click", proceedToCheckout);
 });

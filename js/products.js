@@ -38,26 +38,27 @@ function displayProducts(products) {
     });
 }
 
-// Function to add an item to the cart
+
 function addToCart(id, title, price, imageUrl) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ id, title, price, imageUrl }); // ✅ Includes image for cart display
+    cart.push({ id, title, price, imageUrl }); 
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${title} added to cart!`);
-    updateCartCount(); // ✅ Updates the cart count after adding an item
+    updateCartCount();
 }
+
 
 // Function to update the cart count in the header
 function updateCartCount() {
     const cartCount = document.getElementById("cart-count");
     if (cartCount) {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cartCount.textContent = cart.length; // ✅ Updates cart count dynamically
+        cartCount.textContent = cart.length; 
     }
 }
 
 // Run on page load
 document.addEventListener("DOMContentLoaded", () => {
     fetchProducts();
-    updateCartCount(); // ✅ Ensures the cart count updates when the page loads
+    updateCartCount();
 });

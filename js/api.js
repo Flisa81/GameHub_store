@@ -1,4 +1,4 @@
-const baseAPIUrl = "https://v2.api.noroff.dev/gamehub"; // No extra `/` at the end
+const baseAPIUrl = "https://v2.api.noroff.dev/gamehub"; 
 
 export async function fetchAllProducts() {
     try {

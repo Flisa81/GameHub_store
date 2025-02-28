@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: black !important; /* Ensure black background */
+    background-color: black !important;
     color: white;
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -115,7 +115,7 @@ footer p {
 /* Game Product List - Grid Layout */
 #products-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-content: center;
@@ -624,6 +624,17 @@ footer p {
 .social-icons img {
     width: 30px; /* Adjust size */
     height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+.social-icons img {
+    width: 30px;
+    /* Adjusted for uniform size */
+    height: 30px;
+    object-fit: cover;
     transition: opacity 0.3s ease-in-out;
 }
 
