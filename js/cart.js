@@ -58,7 +58,7 @@ function proceedToCheckout() {
         alert("Your cart is empty. Add items before proceeding.");
         return;
     }
-    window.location.href = "checkout/checkout.html";
+    window.location.href = "../checkout/checkout.html";
 }
 
 // Update cart count in the header

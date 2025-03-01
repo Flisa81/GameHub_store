@@ -1,5 +1,5 @@
 /* General Page Styles */
- body {
+body {
     background-color: black !important;
     color: white;
     font-family: 'Arial', sans-serif;
@@ -586,8 +586,8 @@ form button:hover {
     transition: opacity 0.3s ease-in-out;
     display: block;
     margin: 0 auto;
-    }
-        /* 
+}
+    
 /* Footer Styling */
 footer {
     text-align: center;
@@ -633,4 +633,20 @@ footer p {
 
 .social-icons img:hover {
     opacity: 0.7;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #111;
+    border-bottom: 3px solid #444;
 }

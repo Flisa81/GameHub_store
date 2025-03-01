@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     displayOrderSummary();
+
+    // Handle "Back to Home" button
+    document.getElementById("home-btn").addEventListener("click", () => {
+        window.location.href = "../index.html";
+    });
 });
 
 function getCart() {
@@ -30,10 +35,5 @@ function displayOrderSummary() {
     // ✅ Clear the cart AFTER the order summary is displayed
     setTimeout(() => {
         localStorage.removeItem("cart");
-    }, 500); // Small delay to ensure order summary is shown
+    }, 500);
 }
-
-// Handle "Back to Home" button
-document.getElementById("home-btn").addEventListener("click", () => {
-    window.location.href = "../index.html";
-});
