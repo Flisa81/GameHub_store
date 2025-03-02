@@ -73,6 +73,598 @@ footer p {
     color: #bbb;
 }
 
+/* Product Page Styling */
+.product-container {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+    color: white;
+}
+
+.product-image {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.product-info {
+    max-width: 500px;
+}
+
+.product-info h2 {
+    color: #f39c12;
+}
+
+.sale-price {
+    color: red;
+    text-decoration: line-through;
+}
+
+/* Game Product List - Grid Layout */
+#products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Game Images */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-card img:hover {
+    opacity: 0.8;
+}
+
+/* Product Title */
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #f39c12;
+}
+
+/* Product Card */
+.product-card {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+/* Game Images */
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-card img:hover {
+    opacity: 0.8;
+}
+
+/* Text Overlay on Images */
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #f39c12;
+}
+
+/* Center Both Buttons in Product Cards */
+.product-card .view-game-btn,
+.product-card button {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+/* View Game Button - White */
+.product-card .view-game-btn {
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.product-card .view-game-btn:hover {
+    background-color: #bbb;
+    color: black;
+    border-color: #bbb;
+}
+
+/* Add to Cart Button */
+.product-card button {
+    background-color: #f39c12;
+    color: black;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+}
+
+.product-card button:hover {
+    background-color: #d35400;
+}
+
+/* Cart & Checkout */
+#cart-items,
+#order-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li,
+#order-items li {
+    background-color: #333;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Forms */
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+}
+
+input:focus {
+    border-color: #f39c12;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header img {
+        height: 60px;
+    }
+
+    .product-card img {
+        height: 150px;
+    }
+}
+
+/* Game Images - Adjusted Size */
+.product-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Shopping Cart Section */
+#cart-section {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Cart Items List */
+#cart-items {
+    list-style: none;
+    padding: 0;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Cart Items */
+#cart-items li {
+    background-color: #444;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #666;
+}
+
+/* Total Price */
+#total-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+/* Cart Buttons */
+#clear-cart-btn,
+#checkout-btn {
+    background-color: #f39c12;
+    color: black;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 10px auto;
+    transition: 0.3s;
+}
+
+#clear-cart-btn:hover,
+#checkout-btn:hover {
+    background-color: #d35400;
+    /* Darker orange on hover */
+}
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Cart Item Images */
+.cart-item-image {
+    width: 50px;
+    /* Adjust size */
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Cart Item Details */
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Checkout Page Layout */
+#checkout-section {
+    background-color: #222;
+    /* Dark background */
+    color: white;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Order Summary Styling */
+#order-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+#order-items li {
+    background-color: #333;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Order Total */
+.order-total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+#checkout-form label {
+    font-weight: bold;
+}
+
+#checkout-form input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+/* Checkout Button */
+.checkout-btn {
+    background-color: #f39c12;
+    color: black;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #d35400;
+}
+
+/* Back to Cart Link */
+.back-to-cart {
+    display: inline-block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-to-cart:hover {
+    color: #f39c12;
+}
+
+/* Cart Item Styling */
+.cart-item {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Cart Item Image */
+.cart-item img {
+    width: 60px;
+    /* Adjust size as needed */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Cart Item Info */
+.cart-item-info {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Order Summary - Fix Image Size */
+.order-item {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.order-item-image {
+    width: 60px;
+    /* Adjust size to make it smaller */
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.order-item-info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Contact & About Us Page Styles */
+#contact,
+#about {
+    background-color: #222;
+    color: white;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+#contact h2,
+#about h2 {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form textarea {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: none;
+}
+
+form button {
+    background-color: #f39c12;
+    color: black;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #d35400;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header img {
+        height: 60px;
+    }
+}
+
+/* View Game Page - Adjust Image Size (Only for view_game.html) */
+#view-game-container .game-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+/* View Game Page - Adjust Image Size */
+#game-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #111;
+    border-top: 3px solid #444;
+    margin-top: 20px;
+    color: white;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    /* Adjust size */
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+
+.social-icons img {
+    width: 30px;
+    /* Adjusted for uniform size */
+    height: 30px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    opacity: 0.7;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #111;
+    border-bottom: 3px solid #444;
+}
 /* Improve Cart Item Styling */
 .cart-item {
     display: flex;
@@ -107,7 +699,7 @@ footer p {
     max-width: 300px;
     display: block;
     margin: 10px auto;
-        transition: 0.3s;
+    transition: 0.3s;
 }
 
 #checkout-btn:hover {
