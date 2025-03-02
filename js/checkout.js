@@ -25,11 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         totalContainer.textContent = total.toFixed(2);
     }
+    placeOrderButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevents form from submitting immediately
 
-    // ✅ Fix: Clear cart after order is placed
-    placeOrderButton.addEventListener("click", function () {
-        localStorage.removeItem("cart");
-        window.location.href = "confirmation.html"; // ✅ Redirect to confirmation page
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        if (cart.length === 0) {
+            alert("Your cart is empty!"); // Prevents empty orders
+            return;
+        }
+
+        sessionStorage.setItem("order", JSON.stringify(cart));
+        localStorage.removeItem("cart"); 
+
+        window.location.href = "confirmation.html"; 
     });
 
     loadOrderSummary();

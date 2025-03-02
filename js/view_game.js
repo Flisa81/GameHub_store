@@ -24,7 +24,7 @@ async function fetchGameDetails() {
     }
 }
 
-// ✅ Display game details dynamically
+
 function displayGameDetails(game) {
     gameDetailsContainer.innerHTML = `
         <div class="game-container">
@@ -44,11 +44,11 @@ function displayGameDetails(game) {
     `;
 }
 
-// ✅ Function to add the game to cart
+
 function addToCart(id, title, price, image) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Check if the game already exists in the cart
+
     let existingItem = cart.find(item => item.id === id);
     if (existingItem) {
         alert(`${title} is already in your cart.`);
@@ -61,7 +61,7 @@ function addToCart(id, title, price, image) {
     updateCartCount();
 }
 
-// ✅ Update the cart count in the header
+
 function updateCartCount() {
     const cartCount = document.getElementById("cart-count");
     if (cartCount) {

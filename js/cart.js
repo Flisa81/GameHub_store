@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkoutButton.style.display = cart.length > 0 ? "block" : "none";
     }
 
-    // ✅ Fix Remove Button Event Listener
+
     cartContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("remove-item")) {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     checkoutButton.addEventListener("click", function () {
-        window.location.href = "checkout.html"; // ✅ Redirects to checkout correctly
+        window.location.href = "/checkout/checkout.html"; 
     });
 
     loadCart();
