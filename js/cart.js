@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartContainer = document.getElementById("cart-items");
     const totalContainer = document.getElementById("total-price");
     const checkoutButton = document.getElementById("checkout-btn");
+
     function loadCart() {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         cartContainer.innerHTML = "";
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkoutButton.style.display = cart.length > 0 ? "block" : "none";
     }
 
-
+    // ✅ Fix Remove Button Event Listener
     cartContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("remove-item")) {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -41,11 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-    checkoutButton.style.display = cart.length > 0 ? "block" : "none";
-
     checkoutButton.addEventListener("click", function () {
-        window.location.href = "checkout/index.html";
+        window.location.href = "checkout.html"; // ✅ Redirects to checkout correctly
     });
 
     loadCart();
