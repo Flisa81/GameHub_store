@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sessionStorage.setItem("order", JSON.stringify(cart)); 
         localStorage.removeItem("cart"); 
 
-        window.location.href = "confirmation.html"; 
+        window.location.href = "../confirmation/index.html"; 
     });
 
     loadOrderSummary();
