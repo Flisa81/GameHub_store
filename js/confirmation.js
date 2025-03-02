@@ -37,3 +37,7 @@ function displayOrderSummary() {
         localStorage.removeItem("cart");
     }, 500);
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const confirmationMessage = document.getElementById("confirmation-message");
+    confirmationMessage.textContent = "Thank you for your purchase! Your order has been placed successfully.";
+});
