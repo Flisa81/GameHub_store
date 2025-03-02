@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     displayOrderSummary();
 
-    // ✅ Fix: Ensure "Back to Home" button exists before adding event listener
+
     const homeButton = document.getElementById("home-btn");
     if (homeButton) {
         homeButton.addEventListener("click", () => {
-            window.location.href = "index.html"; // Adjusted path
+            window.location.href = "../index.html"; // Adjusted path
         });
     }
 });
 
-// ✅ Fix: Use sessionStorage to retain order details after checkout
+
 function getOrderDetails() {
     return JSON.parse(sessionStorage.getItem("order")) || [];
 }
@@ -39,7 +39,7 @@ function displayOrderSummary() {
 
     totalPriceContainer.textContent = `$${totalPrice.toFixed(2)}`;
 
-    // ✅ Clear cart after displaying the order summary
+
     setTimeout(() => {
         localStorage.removeItem("cart"); // Ensures cart is cleared after display
         sessionStorage.removeItem("order"); // Clears order details
