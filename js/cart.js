@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    checkoutButton.style.display = cart.length > 0 ? "block" : "none";
+
     checkoutButton.addEventListener("click", function () {
         window.location.href = "checkout/index.html";
     });
