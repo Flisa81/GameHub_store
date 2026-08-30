@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 total += item.price;
                 cartContainer.innerHTML += `
                     <li class="cart-item">
-                        <img src="${item.image}" alt="${item.title}" class="cart-item-image">
+                        <img src="${item.image || item.imageUrl}" alt="${item.title}" class="cart-item-image">
                         <div class="cart-item-details">
                             <h3>${item.title}</h3>
                             <p>Price: $${item.price.toFixed(2)}</p>
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     checkoutButton.addEventListener("click", function () {
-        window.location.href = "/checkout/checkout.html"; 
+        window.location.href = "checkout/checkout.html"; 
     });
 
     loadCart();
