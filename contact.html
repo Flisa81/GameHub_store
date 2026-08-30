@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <!-- Header -->
     <header>
@@ -21,12 +22,12 @@
     </header>
 
     <!-- Contact Form -->
-    <main>
+    <main id="main-content">
         <section id="contact">
             <h2>📩 Contact Us</h2>
             <p>Have any questions? Fill out the form below, and we'll get back to you!</p>
             
-            <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <form id="contact-form">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -37,6 +38,7 @@
                 <textarea id="message" name="message" rows="4" required></textarea>
 
                 <button type="submit">📨 Send Message</button>
+                <p id="contact-status" role="status" aria-live="polite"></p>
             </form>
         </section>
     </main>
@@ -56,7 +58,14 @@
             </a>
         </div>
     </footer>
-    
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            document.getElementById("contact-status").textContent =
+                "Thanks! This demonstration form has been validated successfully.";
+            event.currentTarget.reset();
+        });
+    </script>
 
 </body>
 </html>
