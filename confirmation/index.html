@@ -8,19 +8,20 @@
     <script defer src="../js/confirmation.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header>
-        <a href="index.html"> <!-- ✅ Ensure correct path -->
+        <a href="../index.html"> <!-- ✅ Ensure correct path -->
             <img src="../images/GameHub_Logo.png" alt="GameHub Logo">
         </a>
         <h1>🎉 Thank You for Your Order!</h1>
     </header>
    
-    <main>
+    <main id="main-content">
         <section id="order-summary">
             <h2>🎉 Thank You for Your Order!</h2>
-            <p>Your order has been successfully placed.</p>
-            <p>Any questions about order, please contact us</p>
+            <p id="customer-message">Your order has been successfully placed.</p>
+            <p>If you have any questions about your order, please contact us.</p>
             <ul id="order-items"></ul>
             <p><strong>Total Amount:</strong> $<span id="total-price">0.00</span></p>
         </section>
@@ -32,13 +33,13 @@
             <p>📧 Email: support@gamehub.com | 📞 Phone: +123 456 789</p>
             <div class="social-icons">
                 <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                    <img src="images/instagram.png" alt="Instagram">
+                    <img src="../images/instagram.png" alt="Instagram">
                 </a>
                 <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <img src="images/linkedin.png" alt="LinkedIn">
+                    <img src="../images/linkedin.png" alt="LinkedIn">
                 </a>
                 <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                    <img src="images/youtube.png" alt="YouTube">
+                    <img src="../images/youtube.png" alt="YouTube">
                 </a>
             </div>
         </footer>    

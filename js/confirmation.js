@@ -1,52 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
-    displayOrderSummary();
-
-
     const homeButton = document.getElementById("home-btn");
+
     if (homeButton) {
         homeButton.addEventListener("click", () => {
-            window.location.href = "../index.html"; // Adjusted path
+            window.location.href = "../index.html";
         });
     }
+
+    displayOrderSummary();
 });
 
-
 function getOrderDetails() {
-    return JSON.parse(sessionStorage.getItem("order")) || [];
+    try {
+        const storedOrder = JSON.parse(sessionStorage.getItem("order"));
+
+        if (Array.isArray(storedOrder)) {
+            return { items: storedOrder };
+        }
+
+        return storedOrder || { items: [] };
+    } catch (error) {
+        console.error("Order data could not be read:", error);
+        return { items: [] };
+    }
 }
 
 function displayOrderSummary() {
-    let order = getOrderDetails();
+    const order = getOrderDetails();
+    const items = order.items || [];
     const orderContainer = document.getElementById("order-items");
     const totalPriceContainer = document.getElementById("total-price");
+    const customerMessage = document.getElementById("customer-message");
 
-    if (!orderContainer || !totalPriceContainer) {
-        console.error("Error: Elements missing in confirmation.html");
+    if (!orderContainer || !totalPriceContainer) return;
+
+    if (items.length === 0) {
+        orderContainer.innerHTML = '<li class="empty-message">No order details were found.</li>';
+        totalPriceContainer.textContent = "0.00";
         return;
     }
 
-    if (order.length === 0) {
-        orderContainer.innerHTML = "<p>No items in order.</p>";
-        totalPriceContainer.textContent = "$0.00";
-        return;
+    if (customerMessage && order.customer?.name) {
+        customerMessage.textContent = `Thanks, ${order.customer.name}. A confirmation has been prepared for ${order.customer.email}.`;
     }
 
     let totalPrice = 0;
-    orderContainer.innerHTML = order.map(item => {
-        totalPrice += item.price * (item.quantity || 1);
-        return `<li>${item.title} (x${item.quantity || 1}) - $${(item.price * (item.quantity || 1)).toFixed(2)}</li>`;
+
+    orderContainer.innerHTML = items.map((item) => {
+        const quantity = item.quantity || 1;
+        const itemTotal = Number(item.price) * quantity;
+        totalPrice += itemTotal;
+        return `<li>${item.title} (x${quantity}) - $${itemTotal.toFixed(2)}</li>`;
     }).join("");
 
-    totalPriceContainer.textContent = `$${totalPrice.toFixed(2)}`;
-
-
-    setTimeout(() => {
-        localStorage.removeItem("cart"); // Ensures cart is cleared after display
-        sessionStorage.removeItem("order"); // Clears order details
-    }, 500);
+    totalPriceContainer.textContent = totalPrice.toFixed(2);
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    const confirmationMessage = document.getElementById("confirmation-message");
-    confirmationMessage.textContent = "Thank you for your purchase! Your order has been placed successfully.";
-});
