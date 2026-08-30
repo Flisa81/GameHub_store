@@ -1,10 +1,20 @@
 const baseAPIUrl = "https://v2.api.noroff.dev/gamehub/";
 const productsContainer = document.getElementById("products-list");
 
-// Fetch all products from the API
+function showToast(message) {
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.setAttribute("role", "status");
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 2200);
+}
+
 async function fetchProducts() {
+    productsContainer.innerHTML = '<p class="loading-message">Loading games...</p>';
+
     try {
-        const response = await fetch(`${baseAPIUrl}`);
+        const response = await fetch(baseAPIUrl);
         const data = await response.json();
 
         if (!response.ok) throw new Error("Failed to fetch products");
@@ -12,52 +22,61 @@ async function fetchProducts() {
         displayProducts(data.data);
     } catch (error) {
         console.error("Error fetching products:", error);
-        productsContainer.innerHTML = "<p>Error loading products. Please try again later.</p>";
+        productsContainer.innerHTML = '<p class="error-message">Sorry, the games could not be loaded. Please try again later.</p>';
     }
 }
 
-// Display products dynamically
 function displayProducts(products) {
     productsContainer.innerHTML = "";
-    products.forEach(product => {
-        productsContainer.innerHTML += `
-            <div class="product-card">
-                <img src="${product.image.url}" alt="${product.image.alt}">
-                <h3>${product.title}</h3>
-                <p>Genre: ${product.genre}</p>
-                <p>Price: $${product.discountedPrice} 
-                    ${product.onSale ? `<span class="sale-price">$${product.price}</span>` : ""}
-                </p>
-                <!-- ✅ View Game button added -->
-                <a href="view_game.html?id=${product.id}" class="view-game-btn">🔍 View Game</a>
-                <button onclick="addToCart('${product.id}', '${product.title}', ${product.discountedPrice}, '${product.image.url}')">
-                    🛒 Add to Cart
-                </button>
-            </div>
+
+    products.forEach((product) => {
+        const card = document.createElement("article");
+        card.className = "product-card";
+
+        const originalPrice = product.onSale
+            ? `<span class="sale-price">$${product.price}</span>`
+            : "";
+
+        card.innerHTML = `
+            <img loading="lazy" src="${product.image.url}" alt="${product.image.alt || product.title}">
+            <h3>${product.title}</h3>
+            <p><strong>Genre:</strong> ${product.genre}</p>
+            <p><strong>Price:</strong> $${product.discountedPrice} ${originalPrice}</p>
+            <a href="view_game.html?id=${product.id}" class="view-game-btn" aria-label="View details for ${product.title}">🔍 View Game</a>
+            <button type="button" aria-label="Add ${product.title} to cart">🛒 Add to Cart</button>
         `;
+
+        card.querySelector("button").addEventListener("click", () => {
+            addToCart(product.id, product.title, product.discountedPrice, product.image.url);
+        });
+
+        productsContainer.appendChild(card);
     });
 }
 
-
 function addToCart(id, title, price, imageUrl) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ id, title, price, imageUrl }); 
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existingItem = cart.find((item) => item.id === id);
+
+    if (existingItem) {
+        showToast(`${title} is already in your cart.`);
+        return;
+    }
+
+    cart.push({ id, title, price, image: imageUrl, imageUrl });
     localStorage.setItem("cart", JSON.stringify(cart));
-    alert(`${title} added to cart!`);
+    showToast(`${title} added to cart!`);
     updateCartCount();
 }
 
-
-// Function to update the cart count in the header
 function updateCartCount() {
     const cartCount = document.getElementById("cart-count");
     if (cartCount) {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cartCount.textContent = cart.length; 
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cartCount.textContent = cart.length;
     }
 }
 
-// Run on page load
 document.addEventListener("DOMContentLoaded", () => {
     fetchProducts();
     updateCartCount();
